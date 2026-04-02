@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RLEVal Workshop @ ACM CAIS 2026 | rleval.github.io</title>
+    <title>RLEval: Methods and Reinforcement Learning Environments for Evaluating AI Agents.</title>
     <meta
       name="description"
       content="Evaluating AI Agents: Methods and Reinforcement Learning Environments. ACM CAIS 2026 workshop in San Jose, CA."
@@ -14,7 +14,7 @@
       href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css?v=20260402b" />
+    <link rel="stylesheet" href="styles.css?v=20260402c" />
   </head>
   <body>
     <div class="bg-layer"></div>
@@ -39,7 +39,7 @@
       <section class="hero reveal">
         <div class="hero-copy">
           <p class="kicker">ACM CAIS 2026 Workshop</p>
-          <h1>Evaluating AI Agents: Methods and Reinforcement Learning Environments</h1>
+          <h1>RLEval: Methods and Reinforcement Learning Environments for Evaluating AI Agents.</h1>
           <p>
             The rapid evolution of agentic AI has outpaced how we train and evaluate real-world
             decision-making systems. RLE workshop investigates how to design benchmarks,
@@ -103,24 +103,31 @@
 
       <section id="topics" class="panel reveal">
         <h2>Core Tracks</h2>
+        <div class="track-filters" role="tablist" aria-label="Filter tracks">
+          <button class="track-filter is-active" data-filter="all" type="button">All</button>
+          <button class="track-filter" data-filter="evaluation" type="button">Evaluation</button>
+          <button class="track-filter" data-filter="data" type="button">Data</button>
+          <button class="track-filter" data-filter="environment" type="button">Environment</button>
+          <button class="track-filter" data-filter="deployment" type="button">Deployment</button>
+        </div>
         <div class="bento-grid">
-          <article class="bento accent-a">
+          <article class="bento accent-a" data-track="evaluation">
             <h3>Evaluation Methods</h3>
             <p>Interventional evaluations, causal frameworks, counterfactual test construction.</p>
           </article>
-          <article class="bento accent-b">
+          <article class="bento accent-b" data-track="evaluation">
             <h3>Automated Grading</h3>
             <p>Verifiers, rubric systems, LLM-as-a-judge reliability and calibration studies.</p>
           </article>
-          <article class="bento accent-c">
+          <article class="bento accent-c" data-track="data">
             <h3>Data and Benchmarks</h3>
             <p>New agent benchmarks, failure analyses, benchmark contamination and drift.</p>
           </article>
-          <article class="bento accent-d">
+          <article class="bento accent-d" data-track="environment">
             <h3>RLE Engineering</h3>
             <p>Environment design, tool interfaces, synthetic trajectories, software frameworks.</p>
           </article>
-          <article class="bento accent-e">
+          <article class="bento accent-e" data-track="deployment">
             <h3>Enterprise Evidence</h3>
             <p>Applied case studies connecting evaluation design to production outcomes.</p>
           </article>
@@ -185,8 +192,13 @@
 
       <section id="agenda" class="panel reveal">
         <h2>Agenda (Draft)</h2>
+        <div class="agenda-tabs" role="tablist" aria-label="Agenda sessions">
+          <button type="button" class="agenda-tab is-active" data-agenda="morning">Morning</button>
+          <button type="button" class="agenda-tab" data-agenda="afternoon">Afternoon</button>
+          <button type="button" class="agenda-tab" data-agenda="full">Full Day</button>
+        </div>
         <div class="agenda-columns">
-          <article>
+          <article class="agenda-panel is-active" data-agenda-panel="morning">
             <h3>Morning</h3>
             <ul class="agenda-list">
               <li><time>09:00</time> Opening remarks and workshop scope</li>
@@ -196,7 +208,7 @@
               <li><time>12:15</time> Lunch break</li>
             </ul>
           </article>
-          <article>
+          <article class="agenda-panel is-active" data-agenda-panel="afternoon">
             <h3>Afternoon</h3>
             <ul class="agenda-list">
               <li><time>13:30</time> Keynote 2: Building economically valid RLEs</li>
@@ -342,6 +354,6 @@
       <p><a href="https://www.caisconf.org/" target="_blank" rel="noreferrer">Conference website</a></p>
     </footer>
 
-    <script src="script.js?v=20260402b"></script>
+    <script src="script.js?v=20260402c"></script>
   </body>
 </html>

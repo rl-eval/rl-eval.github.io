@@ -28,6 +28,7 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.58;
+  background-attachment: fixed;
 }
 
 .bg-layer {
@@ -39,6 +40,7 @@ body {
     radial-gradient(circle at 88% 12%, rgba(255, 125, 202, 0.16), transparent 32%),
     radial-gradient(circle at 62% 78%, rgba(111, 129, 222, 0.18), transparent 36%),
     linear-gradient(180deg, #f7f9ff 0%, #eef3ff 100%);
+  animation: ambientShift 18s ease-in-out infinite alternate;
 }
 
 .noise {
@@ -79,6 +81,7 @@ a {
   border-radius: 999px;
   backdrop-filter: blur(12px);
   background: linear-gradient(90deg, rgba(255, 255, 255, 0.9), rgba(245, 248, 255, 0.9));
+  box-shadow: 0 8px 26px rgba(17, 33, 63, 0.08);
 }
 
 .brand {
@@ -140,6 +143,18 @@ nav a:hover {
     linear-gradient(300deg, rgba(255, 179, 87, 0.16), transparent 40%),
     rgba(255, 255, 255, 0.9);
   box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 0%, rgba(255, 255, 255, 0.45) 45%, transparent 100%);
+  transform: translateX(-120%);
+  animation: heroSweep 9s ease-in-out infinite;
+  pointer-events: none;
 }
 
 .kicker {
@@ -265,6 +280,13 @@ nav a:hover {
   border-radius: 22px;
   padding: clamp(1rem, 3vw, 1.6rem);
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(255, 255, 255, 0.82));
+  box-shadow: 0 10px 32px rgba(17, 33, 63, 0.07);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.panel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 36px rgba(17, 33, 63, 0.12);
 }
 
 .title-row {
@@ -300,6 +322,43 @@ nav a:hover {
   border-radius: 16px;
   padding: 0.95rem;
   background: rgba(255, 255, 255, 0.86);
+  transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+}
+
+.bento:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(17, 33, 63, 0.1);
+}
+
+.track-filters {
+  margin-top: 0.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.track-filter {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--muted);
+  padding: 0.35rem 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.track-filter.is-active {
+  color: #ffffff;
+  background: linear-gradient(120deg, var(--teal), #2f9c95);
+  border-color: transparent;
+}
+
+.bento.is-dim {
+  opacity: 0.34;
+}
+
+.bento.is-focus {
+  opacity: 1;
 }
 
 .bento h3 {
@@ -449,11 +508,40 @@ nav a:hover {
   gap: 0.75rem;
 }
 
+.agenda-tabs {
+  display: inline-flex;
+  gap: 0.45rem;
+  margin-top: 0.2rem;
+  padding: 0.32rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.agenda-tab {
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  padding: 0.4rem 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.agenda-tab.is-active {
+  color: #ffffff;
+  background: linear-gradient(120deg, var(--teal), #2f9c95);
+}
+
 .agenda-columns article {
   border: 1px solid var(--line);
   border-radius: 16px;
   padding: 0.95rem;
   background: rgba(255, 255, 255, 0.86);
+}
+
+.agenda-panel.is-hidden {
+  display: none;
 }
 
 .agenda-columns h3 {
@@ -513,7 +601,7 @@ nav a:hover {
 
 .org-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.7rem;
 }
 
@@ -599,7 +687,8 @@ summary {
 
   .cfp-layout,
   .agenda-columns,
-  .speaker-grid {
+  .speaker-grid,
+  .org-grid {
     grid-template-columns: 1fr;
   }
 
@@ -618,8 +707,7 @@ summary {
 
 @media (max-width: 560px) {
   .fact-grid,
-  .timeline,
-  .org-grid {
+  .timeline {
     grid-template-columns: 1fr;
   }
 
@@ -633,5 +721,28 @@ summary {
 
   .submit-mini {
     display: none;
+  }
+}
+
+@keyframes heroSweep {
+  0% {
+    transform: translateX(-120%);
+  }
+  45% {
+    transform: translateX(130%);
+  }
+  100% {
+    transform: translateX(130%);
+  }
+}
+
+@keyframes ambientShift {
+  0% {
+    filter: hue-rotate(0deg);
+    transform: scale(1);
+  }
+  100% {
+    filter: hue-rotate(10deg);
+    transform: scale(1.02);
   }
 }

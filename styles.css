@@ -255,23 +255,59 @@ nav a:hover {
   font-size: 0.92rem;
 }
 
+.submission-status {
+  margin-top: 0.45rem;
+  color: var(--muted);
+  font-size: 0.83rem;
+}
+
+.submission-progress {
+  margin-top: 0.4rem;
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: rgba(17, 33, 63, 0.12);
+  overflow: hidden;
+}
+
+.submission-progress span {
+  display: block;
+  width: 0%;
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--teal), #53b7af);
+  transition: width 0.4s ease;
+}
+
 .ticker {
   margin-top: 1rem;
   display: grid;
-  grid-template-columns: repeat(6, minmax(190px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
   gap: 0.65rem;
-  overflow-x: auto;
-  padding-bottom: 0.2rem;
+  overflow: visible;
+  padding-bottom: 0.1rem;
 }
 
 .ticker div {
   border: 1px solid var(--line);
-  border-radius: 999px;
-  padding: 0.55rem 0.85rem;
+  border-radius: 16px;
+  padding: 0.62rem 0.85rem;
   background: rgba(255, 255, 255, 0.78);
   color: #1f2f54;
-  white-space: nowrap;
+  white-space: normal;
+  text-wrap: balance;
   font-size: 0.84rem;
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ticker div:hover {
+  transform: translateY(-3px) scale(1.01) rotate(-0.4deg);
+  box-shadow: 0 10px 18px rgba(17, 33, 63, 0.12);
 }
 
 .panel {
@@ -468,7 +504,7 @@ nav a:hover {
 .timeline {
   margin-top: 0.86rem;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 0.7rem;
 }
 
@@ -696,6 +732,10 @@ summary {
     grid-template-columns: 1fr;
   }
 
+  .ticker {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .accent-a,
   .accent-b,
   .accent-c,
@@ -708,6 +748,10 @@ summary {
 @media (max-width: 560px) {
   .fact-grid,
   .timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .ticker {
     grid-template-columns: 1fr;
   }
 

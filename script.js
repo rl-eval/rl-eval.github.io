@@ -1,19 +1,53 @@
-const deadline = new Date('2026-04-20T23:59:59-12:00');
+const submissionStart = new Date('2026-04-06T00:00:00-12:00');
+const submissionEnd = new Date('2026-05-11T23:59:59-12:00');
 const countdown = document.getElementById('countdown');
+const submissionStatus = document.getElementById('submission-status');
+const submissionProgressFill = document.getElementById('submission-progress-fill');
 
 function renderCountdown() {
   if (!countdown) {
     return;
   }
   const now = new Date();
-  const delta = deadline.getTime() - now.getTime();
+
+  if (now < submissionStart) {
+    const delta = submissionStart.getTime() - now.getTime();
+    const days = Math.floor(delta / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((delta / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((delta / (1000 * 60)) % 60);
+    countdown.textContent = `Submissions open in ${days}d ${hours}h ${minutes}m (AoE).`;
+    if (submissionStatus) {
+      submissionStatus.textContent = 'Submission window has not opened yet.';
+    }
+    if (submissionProgressFill) {
+      submissionProgressFill.style.width = '0%';
+    }
+    return;
+  }
+
+  const delta = submissionEnd.getTime() - now.getTime();
   if (delta > 0) {
     const days = Math.floor(delta / (1000 * 60 * 60 * 24));
     const hours = Math.floor((delta / (1000 * 60 * 60)) % 24);
     const minutes = Math.floor((delta / (1000 * 60)) % 60);
-    countdown.textContent = `${days}d ${hours}h ${minutes}m left until submission deadline (AoE).`;
+    countdown.textContent = `${days}d ${hours}h ${minutes}m left until submission closes (AoE).`;
+    const totalWindow = submissionEnd.getTime() - submissionStart.getTime();
+    const elapsed = now.getTime() - submissionStart.getTime();
+    const pct = Math.max(0, Math.min(100, (elapsed / totalWindow) * 100));
+    if (submissionStatus) {
+      submissionStatus.textContent = `Submission window is open (${Math.round(pct)}% elapsed).`;
+    }
+    if (submissionProgressFill) {
+      submissionProgressFill.style.width = `${pct}%`;
+    }
   } else {
     countdown.textContent = 'Submission deadline has passed. Update dates for the next cycle.';
+    if (submissionStatus) {
+      submissionStatus.textContent = 'Submission window is closed.';
+    }
+    if (submissionProgressFill) {
+      submissionProgressFill.style.width = '100%';
+    }
   }
 }
 renderCountdown();

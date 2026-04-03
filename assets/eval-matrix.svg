@@ -1,0 +1,22 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" rx="36" fill="url(#bg)"/>
+  <rect x="120" y="160" width="960" height="520" rx="26" fill="#FFFFFF" stroke="#1B3568" stroke-opacity="0.22" stroke-width="5"/>
+  <g stroke="#D1DBF4" stroke-width="3">
+    <path d="M120 290H1080"/><path d="M120 420H1080"/><path d="M120 550H1080"/>
+    <path d="M360 160V680"/><path d="M600 160V680"/><path d="M840 160V680"/>
+  </g>
+  <g>
+    <rect x="152" y="194" width="174" height="64" rx="14" fill="#0F8F88"/>
+    <rect x="392" y="324" width="174" height="64" rx="14" fill="#6F81DE"/>
+    <rect x="632" y="454" width="174" height="64" rx="14" fill="#FF7DCA"/>
+    <rect x="872" y="584" width="174" height="64" rx="14" fill="#FFB357"/>
+  </g>
+  <text x="78" y="95" fill="#11213F" font-family="Sora, sans-serif" font-size="54" font-weight="700">Evaluation Matrix</text>
+  <text x="160" y="734" fill="#2D426E" font-family="IBM Plex Sans, sans-serif" font-size="36">Verifier accuracy • calibration • causal validity • robustness</text>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="800" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFDF8"/>
+      <stop offset="1" stop-color="#EFF4FF"/>
+    </linearGradient>
+  </defs>
+</svg>

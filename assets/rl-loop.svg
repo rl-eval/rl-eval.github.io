@@ -1,0 +1,26 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="800" rx="36" fill="url(#bg)"/>
+  <g opacity="0.95">
+    <circle cx="250" cy="410" r="120" fill="#0F8F88"/>
+    <circle cx="600" cy="230" r="110" fill="#6F81DE"/>
+    <circle cx="930" cy="460" r="130" fill="#FFB357"/>
+  </g>
+  <g stroke="#11213F" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M338 370C418 270 506 240 570 240"/>
+    <path d="M695 290C782 332 847 380 867 438"/>
+    <path d="M856 560C757 645 582 666 418 560"/>
+  </g>
+  <g fill="#11213F">
+    <path d="M567 208l52 32-56 24z"/>
+    <path d="M896 432l12 60-51-33z"/>
+    <path d="M372 564l60-6-29 50z"/>
+  </g>
+  <text x="78" y="95" fill="#11213F" font-family="Sora, sans-serif" font-size="54" font-weight="700">Reinforcement Loop</text>
+  <text x="82" y="742" fill="#2D426E" font-family="IBM Plex Sans, sans-serif" font-size="36">State → Policy → Reward → Update</text>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="800" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F7FCFF"/>
+      <stop offset="1" stop-color="#EAF2FF"/>
+    </linearGradient>
+  </defs>
+</svg>

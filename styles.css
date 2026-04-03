@@ -681,14 +681,14 @@ nav a:hover {
 
 .organizer-head {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.9rem;
 }
 
 .avatar {
-  width: 72px;
-  height: 72px;
-  border-radius: 14px;
+  width: 120px;
+  height: 120px;
+  border-radius: 18px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -704,9 +704,9 @@ nav a:hover {
 }
 
 .organizer-photo {
-  width: 72px;
-  height: 72px;
-  border-radius: 14px;
+  width: 120px;
+  height: 120px;
+  border-radius: 18px;
   object-fit: cover;
   object-position: center;
   display: block;

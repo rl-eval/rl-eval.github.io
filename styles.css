@@ -70,7 +70,7 @@ a {
   position: sticky;
   top: 0;
   z-index: 50;
-  width: min(1200px, 94vw);
+  width: calc(100vw - 2rem);
   margin: 1rem auto 0;
   padding: 0.75rem 0.95rem;
   display: grid;
@@ -126,7 +126,7 @@ nav a:hover {
 
 .container,
 .site-footer {
-  width: min(1200px, 94vw);
+  width: calc(100vw - 2rem);
   margin: 0 auto;
 }
 
@@ -686,8 +686,8 @@ nav a:hover {
 }
 
 .avatar {
-  width: 120px;
-  height: 120px;
+  width: 160px;
+  height: 160px;
   border-radius: 18px;
   display: inline-flex;
   align-items: center;
@@ -704,8 +704,8 @@ nav a:hover {
 }
 
 .organizer-photo {
-  width: 120px;
-  height: 120px;
+  width: 160px;
+  height: 160px;
   border-radius: 18px;
   object-fit: cover;
   object-position: center;
@@ -816,6 +816,18 @@ summary {
 }
 
 @media (max-width: 560px) {
+  .site-header,
+  .container,
+  .site-footer {
+    width: calc(100vw - 1rem);
+  }
+
+  .avatar,
+  .organizer-photo {
+    width: 120px;
+    height: 120px;
+  }
+
   .fact-grid,
   .timeline {
     grid-template-columns: 1fr;

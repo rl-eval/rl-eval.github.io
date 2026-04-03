@@ -682,12 +682,12 @@ nav a:hover {
 .organizer-head {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.9rem;
 }
 
 .avatar {
-  width: 52px;
-  height: 52px;
+  width: 72px;
+  height: 72px;
   border-radius: 14px;
   display: inline-flex;
   align-items: center;
@@ -704,8 +704,8 @@ nav a:hover {
 }
 
 .organizer-photo {
-  width: 52px;
-  height: 52px;
+  width: 72px;
+  height: 72px;
   border-radius: 14px;
   object-fit: cover;
   object-position: center;

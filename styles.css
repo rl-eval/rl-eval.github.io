@@ -255,30 +255,6 @@ nav a:hover {
   font-size: 0.92rem;
 }
 
-.submission-status {
-  margin-top: 0.45rem;
-  color: var(--muted);
-  font-size: 0.83rem;
-}
-
-.submission-progress {
-  margin-top: 0.4rem;
-  width: 100%;
-  height: 8px;
-  border-radius: 999px;
-  background: rgba(17, 33, 63, 0.12);
-  overflow: hidden;
-}
-
-.submission-progress span {
-  display: block;
-  width: 0%;
-  height: 100%;
-  border-radius: 999px;
-  background: linear-gradient(90deg, var(--teal), #53b7af);
-  transition: width 0.4s ease;
-}
-
 .ticker {
   margin-top: 1rem;
   display: grid;
@@ -535,7 +511,7 @@ nav a:hover {
 .timeline {
   margin-top: 0.86rem;
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0.7rem;
 }
 

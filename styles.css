@@ -691,9 +691,10 @@ nav a:hover {
 }
 
 .organizer-photo--priyaranjan {
-  object-fit: contain;
-  object-position: center top;
-  background: #f1f4fb;
+  width: 160px;
+  height: 190px;
+  object-fit: cover;
+  object-position: 50% 16%;
 }
 
 .org-grid h3 {

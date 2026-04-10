@@ -255,6 +255,11 @@ nav a:hover {
   font-size: 0.92rem;
 }
 
+.glance-submit {
+  margin-top: 0.6rem;
+  display: inline-flex;
+}
+
 .ticker {
   margin-top: 1rem;
   display: grid;

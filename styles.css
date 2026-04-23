@@ -666,6 +666,11 @@ nav a:hover {
   gap: 0.9rem;
 }
 
+.organizer-head h3 {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
 .organizer-card-link {
   display: block;
   text-decoration: none;

@@ -666,6 +666,12 @@ nav a:hover {
   gap: 0.9rem;
 }
 
+.organizer-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
 .avatar {
   width: 160px;
   height: 160px;

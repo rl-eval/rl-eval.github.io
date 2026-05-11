@@ -1,5 +1,7 @@
 const submissionEnd = new Date('2026-05-20T23:59:59-12:00');
 const countdown = document.getElementById('countdown');
+const countdownTime = document.getElementById('countdown-time');
+const countdownNote = document.getElementById('countdown-note');
 
 function renderCountdown() {
   if (!countdown) {
@@ -12,9 +14,21 @@ function renderCountdown() {
     const days = Math.floor(delta / (1000 * 60 * 60 * 24));
     const hours = Math.floor((delta / (1000 * 60 * 60)) % 24);
     const minutes = Math.floor((delta / (1000 * 60)) % 60);
-    countdown.textContent = `${days}d ${hours}h ${minutes}m left until submission closes (AoE).`;
+    countdown.classList.remove('countdown-expired');
+    if (countdownTime && countdownNote) {
+      countdownTime.textContent = `${days}d ${hours}h ${minutes}m`;
+      countdownNote.textContent = 'Until May 20, 2026, 23:59 AoE';
+    } else {
+      countdown.textContent = `${days}d ${hours}h ${minutes}m left until submission closes (AoE).`;
+    }
   } else {
-    countdown.textContent = 'Submission deadline has passed. Update dates for the next cycle.';
+    countdown.classList.add('countdown-expired');
+    if (countdownTime && countdownNote) {
+      countdownTime.textContent = 'Closed';
+      countdownNote.textContent = 'The submission deadline has passed.';
+    } else {
+      countdown.textContent = 'Submission deadline has passed.';
+    }
   }
 }
 renderCountdown();

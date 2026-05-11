@@ -255,6 +255,35 @@ nav a:hover {
   font-size: 0.92rem;
 }
 
+.countdown-label,
+.countdown-note {
+  display: block;
+}
+
+.countdown-label {
+  color: var(--muted);
+  font-size: 0.76rem;
+}
+
+.countdown-time {
+  display: block;
+  margin-top: 0.16rem;
+  color: var(--text);
+  font-size: 1.35rem;
+  line-height: 1.1;
+}
+
+.countdown-note {
+  margin-top: 0.22rem;
+  font-size: 0.78rem;
+}
+
+.countdown-expired {
+  border-color: rgba(102, 102, 102, 0.28);
+  background: rgba(255, 255, 255, 0.76);
+  color: var(--muted);
+}
+
 .glance-submit {
   margin-top: 0.6rem;
   display: inline-flex;

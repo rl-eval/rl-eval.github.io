@@ -1,4 +1,4 @@
-const submissionEnd = new Date('2026-05-11T23:59:59-12:00');
+const submissionEnd = new Date('2026-05-20T23:59:59-12:00');
 const countdown = document.getElementById('countdown');
 
 function renderCountdown() {

@@ -15,6 +15,43 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css?v=20260406a" />
+    <style>
+
+      .agenda-talk-trigger {
+        position: relative;
+        display: inline-block;
+        text-decoration: underline dotted;
+        text-underline-offset: 0.18rem;
+        cursor: help;
+      }
+
+      .agenda-talk-modal {
+        position: absolute;
+        left: 0;
+        top: calc(100% + 0.4rem);
+        width: min(34rem, 85vw);
+        padding: 0.8rem 0.9rem;
+        border-radius: 0.75rem;
+        border: 1px solid rgba(148, 163, 184, 0.4);
+        background: rgba(15, 23, 42, 0.96);
+        color: #e2e8f0;
+        font-size: 0.82rem;
+        line-height: 1.45;
+        box-shadow: 0 16px 36px rgba(2, 6, 23, 0.45);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.18s ease;
+        z-index: 30;
+      }
+
+      .agenda-talk-trigger:hover .agenda-talk-modal,
+      .agenda-talk-trigger:focus .agenda-talk-modal,
+      .agenda-talk-trigger:focus-visible .agenda-talk-modal {
+        opacity: 1;
+        visibility: visible;
+      }
+    </style>
   </head>
   <body>
     <div class="bg-layer"></div>
@@ -110,7 +147,9 @@
               <li><time>09:00</time> Opening remarks</li>
               <li><time>09:10</time> Alex Shaw and Ryan Marten - TerminalBench 3 and the Harbor RLE framework</li>
               <li><time>10:00</time>Coffee break</li>
-              <li><time>10:30</time>Alex Dimakis - Evaluating and Optimizing Agents with RL Environments</li>
+              <li><time>10:30</time>Alex Dimakis - <span class="agenda-talk-trigger" tabindex="0">Evaluating and Optimizing Agents with RL Environments
+                <span class="agenda-talk-modal" role="tooltip">We are moving from 'What does AI know' to 'What can AI do'. To evaluate and train autonomous agents, we are moving from datasets of questions and answers to the creation of environments, which is the new type of data. We will discuss how Terminal Bench environments can be used as the paradigm for training and optimizing agents, starting from prompt optimization, harness optimization (with GEPA or other evolutionary algorithms) to weight updates with RL. We'll also cover recent work on adaptive taxonomies and how GEPA-type evolution techniques can be used for environment building.</span>
+              </span></li>
               <li><time>11:10</time>Ram Sampath - <a href="https://openreview.net/attachment?id=X9lJT3TxCF&name=pdf" target="_blank" rel="noopener noreferrer">RL-ADA: Co-Evolutionary Adversarial Training for Self-Improving Customer Support Agents Without Human Feedback</a></li>
               <li><time>11:30</time>Victor Ojewale - <a href="https://openreview.net/attachment?id=0yKgijjdct&name=pdf" target="_blank" rel="noopener noreferrer">What Benchmarks Don’t Measure: The Case for Evaluating Abstention Competence in Autonomous Agents</a></li>
               <li><time>11:45</time>Ayush Sawarni - <a href="https://openreview.net/attachment?id=xqpDucFOZT&name=pdf" target="_blank" rel="noopener noreferrer">CausalReasoningBenchmark: A Real-World Benchmark for Disentangled Evaluation of Causal Identification and Estimation</a></li>
